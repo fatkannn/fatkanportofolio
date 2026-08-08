@@ -260,8 +260,35 @@
   text-align: center;
   background: var(--secondary);
 }
-.sc-cta .section-title { color: var(--white); margin-bottom: var(--space-2); }
-.sc-cta .sc-text { color: rgba(255,255,255,0.65); margin: 0 auto var(--space-4); text-align: center; }
+
+.sc-cta .section-inner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sc-cta .section-title {
+  color: var(--white);
+  margin: 0 0 var(--space-2);
+  text-align: center;
+}
+
+.sc-cta .sc-text {
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 var(--space-4);
+  text-align: center;
+}
+
+.sc-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* ---------------- Thriftbest: Logo Brief slideshow ---------------- */
 .tb-slideshow {
