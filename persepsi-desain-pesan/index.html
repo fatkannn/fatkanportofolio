@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persepsi dan Desain Pesan — Materi Kuliah</title>
+<meta name="description" content="Materi kuliah Persepsi dan Desain Pesan — Program Studi Teknologi Pendidikan.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <span class="navbar-brand">PDP<span class="navbar-brand-dot">.</span></span>
+    <button class="navbar-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar-progress" id="navbarProgress">
+      <div class="navbar-progress-track"><div class="navbar-progress-fill" id="progressFill"></div></div>
+      <span class="navbar-progress-label" id="progressLabel">Bab 0 / 7</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ TOC DRAWER (mobile + jump nav) ============ -->
+<aside class="toc-drawer" id="tocDrawer">
+  <div class="toc-drawer-head">
+    <span>Daftar Isi</span>
+    <button class="toc-close" id="tocClose" aria-label="Tutup daftar isi">&times;</button>
+  </div>
+  <nav class="toc-list" id="tocList"></nav>
+</aside>
+<div class="toc-scrim" id="tocScrim"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-texture" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Mata Kuliah &middot; Teknologi Pendidikan</p>
+    <h1 class="hero-title">Persepsi dan<br><em>Desain Pesan</em></h1>
+    <p class="hero-desc">
+      Dari cara manusia mempersepsi informasi, sampai bagaimana pesan itu dirancang
+      agar sampai dan dipahami — tujuh pokok bahasan, disusun berurutan.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">7</span>
+        <span class="hero-meta-label">Pokok Bahasan</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">16</span>
+        <span class="hero-meta-label">Modul Interaktif</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">6</span>
+        <span class="hero-meta-label">Kuis Evaluasi</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#toc-inline" class="btn btn-primary">Lihat Daftar Isi <span class="btn-arrow">&darr;</span></a>
+      <button class="btn btn-ghost" id="startReadingBtn">Mulai Belajar <span class="btn-arrow">&rarr;</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ INLINE TABLE OF CONTENTS ============ -->
+<section class="toc-inline" id="toc-inline">
+  <div class="toc-inline-inner">
+    <p class="section-eyebrow">Daftar Isi</p>
+    <h2 class="section-title">Tujuh Pokok Bahasan.</h2>
+    <div class="toc-grid" id="tocGrid"></div>
+  </div>
+</section>
+
+<!-- ============ COURSE CONTENT (rendered by JS) ============ -->
+<main id="courseContent"></main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="site-footer-title">Persepsi dan Desain Pesan</p>
+    <p class="site-footer-sub">Program Studi Teknologi Pendidikan &middot; Disusun sebagai Learning Object</p>
+    <a href="#top" class="back-to-top">Kembali ke Atas &uarr;</a>
+  </div>
+</footer>
+
+<!-- ============ IMAGE LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="js/course-data.js"></script>
+<script src="js/img-lookup.js"></script>
+<script src="js/render.js"></script>
+</body>
+</html>

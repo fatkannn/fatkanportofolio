@@ -1,0 +1,352 @@
+/* ==========================================================================
+   SHOWCASE PAGE — extends the design tokens from style.css
+   ========================================================================== */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+  transition: color 0.2s var(--ease);
+}
+.back-link:hover { color: var(--primary); }
+.back-link .icon { width: 16px; height: 16px; }
+
+.showcase-header {
+  padding: 140px 0 var(--space-8);
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 0%, rgba(37, 99, 235, 0.08), transparent 60%),
+    var(--bg);
+}
+.showcase-h1 {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.1;
+  margin: 0 0 var(--space-2);
+  max-width: 780px;
+}
+.showcase-lead {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 620px;
+  line-height: 1.65;
+  margin: 0 0 var(--space-4);
+}
+
+.jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.jump-nav a {
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--text-muted);
+  transition: all 0.2s var(--ease);
+}
+.jump-nav a:hover { border-color: var(--primary); color: var(--primary); background: var(--bg-alt); }
+
+/* ---------------- Project sections ---------------- */
+.sc-project { padding: var(--space-10) 0; }
+.sc-project-alt { background: var(--bg-alt); }
+
+.sc-project-head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  scroll-margin-top: 90px;
+}
+.sc-index {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--secondary);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.sc-client { font-size: clamp(24px, 3vw, 32px); font-weight: 800; color: var(--secondary); margin: 2px 0 4px; }
+.sc-title { font-size: 16px; color: var(--text-muted); margin: 0; }
+
+.sc-visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-4);
+  max-width: 720px;
+}
+.sc-visual img { width: 100%; display: block; }
+
+/* Watermark notice overlay for client-owned visual assets */
+.sc-watermark {
+  position: absolute;
+  right: 10px; bottom: 10px;
+  max-width: 260px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+  padding: 6px 9px;
+  border-radius: 6px;
+  text-align: right;
+}
+
+/* Grid of 2+ visuals within a single project/module */
+.sc-visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  max-width: 720px;
+}
+.sc-visual-grid .sc-visual { margin-bottom: 0; max-width: none; }
+.sc-visual-grid .sc-visual-caption {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin-top: 6px;
+  text-align: center;
+}
+@media (max-width: 560px) {
+  .sc-visual-grid { grid-template-columns: 1fr; }
+}
+
+.sc-body { max-width: 720px; }
+.sc-subhead { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin: 0 0 var(--space-2); }
+.sc-text { font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin: 0 0 var(--space-3); }
+.sc-tags { margin-bottom: var(--space-3); }
+
+.sc-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-faint);
+  background: var(--gray-100);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin: 0;
+}
+.sc-note .icon { width: 16px; height: 16px; flex-shrink: 0; color: var(--text-faint); }
+
+/* ---------------- Client roster table (Lookmedia) ---------------- */
+.sc-client-roster {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 900px;
+}
+.sc-client-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.sc-client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+}
+.sc-client-logo img { max-width: 100%; max-height: 56px; object-fit: contain; }
+.sc-client-info { display: flex; flex-direction: column; gap: 6px; }
+.sc-client-role { font-size: 14.5px; color: var(--text-muted); line-height: 1.55; margin: 0; }
+.sc-client-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.sc-client-tool-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--primary);
+}
+@media (max-width: 640px) {
+  .sc-client-row { grid-template-columns: 1fr; }
+  .sc-client-logo { justify-content: flex-start; height: 40px; }
+}
+
+/* ---------------- Module groups (Kemendikdasmen) ---------------- */
+.sc-module-group { max-width: 900px; margin-top: var(--space-6); }
+.sc-group-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0 0 var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--gray-200);
+}
+.sc-module-group .sc-group-title:first-of-type { border-top: none; padding-top: 0; }
+
+.sc-module {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-top: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+.sc-module-head h4 { font-size: 18px; font-weight: 700; color: var(--secondary); margin: 0 0 8px; }
+.sc-module-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-bottom: var(--space-2);
+}
+.sc-module-meta span { font-size: 13px; color: var(--text-faint); }
+.sc-module-meta strong { color: var(--text-muted); font-weight: 600; }
+
+/* ---------------- Embeds ---------------- */
+.sc-embed-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: visible;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  margin-top: var(--space-2);
+}
+.sc-embed-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 480px;
+  border: none;
+  border-radius: var(--radius-md);
+}
+.sc-embed-tall {
+  margin-top: var(--space-4);
+  max-width: 900px;
+}
+.sc-embed-tall iframe { height: auto; aspect-ratio: 1894 / 1174; }
+
+.sc-embed-portrait {
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sc-embed-portrait iframe { height: auto; aspect-ratio: 1124 / 1607; }
+
+.sc-embed-pending {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sc-embed-pending-inner {
+  text-align: center;
+  color: var(--text-faint);
+  padding: var(--space-4);
+}
+.sc-embed-pending-inner .icon { width: 32px; height: 32px; margin: 0 auto var(--space-2); opacity: 0.5; }
+.sc-embed-pending-inner p { font-size: 14px; margin: 0; max-width: 280px; }
+
+/* ---------------- Closing CTA ---------------- */
+.sc-cta {
+  padding: var(--space-10) 0;
+  text-align: center;
+  background: var(--secondary);
+}
+.sc-cta .section-title { color: var(--white); margin-bottom: var(--space-2); }
+.sc-cta .sc-text { color: rgba(255,255,255,0.65); margin: 0 auto var(--space-4); text-align: center; }
+
+/* ---------------- Thriftbest: Logo Brief slideshow ---------------- */
+.tb-slideshow {
+  max-width: 720px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--secondary);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+.tb-slideshow-stage { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000; }
+.tb-slideshow-track {
+  display: flex; height: 100%;
+  transition: transform 0.4s var(--ease);
+}
+.tb-slideshow-track img { flex: 0 0 100%; height: 100%; object-fit: contain; }
+.tb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(15,23,42,0.55); backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.3); color: var(--white);
+  font-size: 22px; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+.tb-nav:hover:not(:disabled) { background: rgba(15,23,42,0.8); }
+.tb-nav:disabled { opacity: 0.25; cursor: default; }
+.tb-prev { left: 12px; }
+.tb-next { right: 12px; }
+.tb-slideshow-footer {
+  display: flex; justify-content: center;
+  padding: 10px; background: var(--secondary);
+}
+.tb-counter { font-size: 12.5px; color: rgba(255,255,255,0.7); font-variant-numeric: tabular-nums; }
+
+/* ---------------- Thriftbest: inline video player ---------------- */
+.tb-video-wrap {
+  position: relative;
+  max-width: 720px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+.tb-video-thumb { width: 100%; display: block; cursor: pointer; transition: filter 0.2s var(--ease); }
+.tb-video-thumb:hover { filter: brightness(0.94); }
+.tb-video-el { display: block; width: auto; height: auto; max-width: 100%; max-height: 640px; margin: 0 auto; background: #000; }
+
+/* ---------------- Creative Portfolio section ---------------- */
+.sc-creative { padding: var(--space-10) 0; background: var(--paper, var(--gray-100)); }
+.sc-creative-lead { max-width: 640px; margin-bottom: var(--space-5) !important; }
+.creative-grid-sc {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+.creative-load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+.btn-ghost-dark {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 999px;
+  font-weight: 600; font-size: 14.5px;
+  background: var(--white); color: var(--secondary);
+  border: 1.5px solid var(--gray-200);
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.btn-ghost-dark:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+@media (max-width: 900px) {
+  .creative-grid-sc { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .creative-grid-sc { grid-template-columns: repeat(2, 1fr); }
+  .tb-video-el { max-height: 480px; }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 760px) {
+  .showcase-header { padding-top: 110px; }
+  .sc-project-head { gap: var(--space-2); }
+  .sc-index { width: 34px; height: 34px; font-size: 13px; }
+  .sc-module { padding: var(--space-3); }
+}
